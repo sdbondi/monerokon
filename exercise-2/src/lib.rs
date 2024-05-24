@@ -1,6 +1,6 @@
 use tari_template_lib::prelude::*;
 
-/// The flat fee for each withdraw
+/// The flat fee payed for each withdraw
 const FEE: Amount = Amount(10);
 
 #[template]
@@ -13,12 +13,10 @@ mod template {
     }
 
     impl Monerokon {
-        /// Construct the component with an initial supply of fungible and confidential tokens.
-        pub fn new(
-            initial_supply: Amount,
-            confidential_initial_supply: ConfidentialOutputStatement,
-        ) -> Component<Self> {
+        /// Construct the component with an initial supply of fungible tokens.
+        pub fn new(initial_supply: Amount) -> Component<Self> {
             // TODO: Create a fungible resource with an initial supply
+            // let bucket = ResourceBuilder::fungible()
 
             let state = Self {
                 // TODO:

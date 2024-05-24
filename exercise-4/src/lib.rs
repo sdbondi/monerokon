@@ -1,27 +1,24 @@
 use tari_template_lib::prelude::*;
 
-/// The flat fee for each withdraw
+/// The flat fee payed for each withdraw
 const FEE: Amount = Amount(10);
 
 #[template]
 mod template {
     use super::*;
 
-    /// Defines the component state
     pub struct Monerokon {
         fee_vault: Vault,
         confidential_vault: Vault,
     }
 
     impl Monerokon {
-        /// Construct the component with an initial supply of fungible and confidential tokens.
+        /// Construct the component with an initial supply of confidential tokens.
         pub fn new(initial_supply: ConfidentialOutputStatement) -> Component<Self> {
             // TODO: Create a confidential resource with an initial supply
-            // let bucket = ResourceBuilder::confidential()
 
             let state = Self {
-                fee_vault: Vault::new_empty(XTR2),
-                confidential_vault: Vault::from_bucket(bucket),
+                // TODO: Create and set confidential_vault and empty fee_vault
             };
 
             Component::new(state)

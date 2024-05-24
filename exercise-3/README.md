@@ -1,7 +1,7 @@
 To build:
 
 ```
-cd package
+cd exercise-3
 cargo build-wasm
 ```
 

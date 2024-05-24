@@ -1,6 +1,6 @@
 use tari_template_lib::prelude::*;
 
-/// The flat fee for each withdraw
+/// The flat fee payed for each withdraw
 const FEE: Amount = Amount(10);
 
 #[template]
@@ -14,7 +14,7 @@ mod template {
     }
 
     impl Monerokon {
-        /// Construct the component with an initial supply of fungible and confidential tokens.
+        /// Construct the component with an initial supply of non-sfungible tokens.
         pub fn new(initial_nfts: Vec<NonFungibleId>) -> Component<Self> {
             let initial_nfts = initial_nfts
                 .into_iter()
@@ -22,7 +22,6 @@ mod template {
                 .collect::<Vec<_>>();
 
             // TODO: Create a Non-Fungible resource with two NFTs in a new vault named 'nft_vault'
-            // let bucket = ResourceBuilder::non_fungible()
 
             let state = Self {
                 nft_vault: Vault::from_bucket(bucket),
