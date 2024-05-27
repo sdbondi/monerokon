@@ -14,7 +14,7 @@ mod template {
     }
 
     impl Monerokon {
-        /// Construct the component with an initial supply of non-sfungible tokens.
+        /// Construct the component with an initial supply of non-fungible tokens.
         pub fn new(initial_nfts: Vec<NonFungibleId>) -> Component<Self> {
             let initial_nfts = initial_nfts
                 .into_iter()
